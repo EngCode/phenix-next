@@ -9,7 +9,7 @@ import PhenixCSS from "./css/phenix.css";
 import FontAwesome from "./webfonts/fontawesome-6.css";
 import SomarRounded from "./webfonts/somar-rounded.css";
 
-//====> Render CSS Files <====//
+//====> Loading CSS Files <====//
 export const links: LinksFunction = () => [
     //===> Phenix CSS <===//
     { rel: "stylesheet", href: PhenixCSS },
@@ -24,16 +24,18 @@ export default function App() {
     return (
         <html lang="en">
         <head>
-            <meta charSet="utf-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
             <Meta />
             <Links />
+            <meta charSet="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
         </head>
         <body>
-            <h1>Hello Phenix from Remix JS - مرحباً فى نظام تصميم فينكس</h1>
-            <ScrollRestoration />
-            <Scripts />
-            <LiveReload />
+            <div className="container pd-50">
+                <h1>Hello Phenix from Remix JS - مرحباً فى نظام تصميم فينكس</h1>
+            </div>
+            {/* <ScrollRestoration /> */}
+            {/* <Scripts /> */}
+            {/* <LiveReload /> */}
         </body>
         </html>
     );
