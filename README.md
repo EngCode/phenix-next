@@ -1,6 +1,6 @@
 # Introduction
 
-Phenix Design System is lightweight user-interface framework build for simple structure and **Phenix Remix is integration for Phenix Design System**.
+Phenix Design System is lightweight user-interface framework build for simple structure and **Phenix Remix is integration for Phenix Design System with Remix JS Framework**.
 
 ---
 
