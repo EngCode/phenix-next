@@ -27,14 +27,15 @@ export default function App() {
             <Meta />
             <Links />
             <meta charSet="utf-8" />
+            <title>Phenix Design System</title>
             <meta name="viewport" content="width=device-width, initial-scale=1" />
         </head>
         <body>
             <div className="container pd-50">
                 <h1>Hello Phenix from Remix JS - مرحباً فى نظام تصميم فينكس</h1>
             </div>
-            {/* <ScrollRestoration /> */}
-            {/* <Scripts /> */}
+            <ScrollRestoration />
+            <Scripts />
             {/* <LiveReload /> */}
         </body>
         </html>
