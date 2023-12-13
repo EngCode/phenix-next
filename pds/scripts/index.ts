@@ -34,7 +34,7 @@
 /*====> Phenix Object <====*/
 export class PhenixElements extends Array<HTMLElement | Object | 'object'> {
     /*====> D.O.M Ready <====*/
-    ready(callback:any) {
+    ready(callback:(event?:Event) => any) {
         //====> Check if its Ready <====//
         if (document.readyState == 'complete') callback();
 
@@ -46,7 +46,7 @@ export class PhenixElements extends Array<HTMLElement | Object | 'object'> {
     }
 
     /*====> Add Class <====*/
-    addClass(className:any) {
+    addClass(className:string) {
         //====> Split classNames string into an array of class names <====//
         const classNamesArray = className.split(' ');
 
@@ -60,7 +60,7 @@ export class PhenixElements extends Array<HTMLElement | Object | 'object'> {
     }
 
     /*====> Remove Class <====*/
-    removeClass(className:any) {
+    removeClass(className:string) {
         //====> Split classNames string into an array of class names <====//
         const classNamesArray = className.split(' ');
 
@@ -74,7 +74,7 @@ export class PhenixElements extends Array<HTMLElement | Object | 'object'> {
     }
 
     /*====> Toggle Class <====*/
-    toggleClass(className:any) {
+    toggleClass(className:string) {
         //====> Split classNames string into an array of class names <====//
         const classNamesArray = className.split(' ');
 
@@ -88,7 +88,7 @@ export class PhenixElements extends Array<HTMLElement | Object | 'object'> {
     }
 
     /*====> Get Ancestor <====*/
-    ancestor(target?) {
+    ancestor(target?:string) {
         //====> Define Ancestor Arrays <====//
         let ancestors = [];
 
@@ -118,7 +118,7 @@ export class PhenixElements extends Array<HTMLElement | Object | 'object'> {
     }
 
     /*====> Get Siblings <====*/
-    siblings(target?) {
+    siblings(target?:string) {
         //====> Siblings Define <====//
         let siblings = [];
 
@@ -139,7 +139,7 @@ export class PhenixElements extends Array<HTMLElement | Object | 'object'> {
     }
 
     /*====> Get Next Siblings <====*/
-    next(target?, all_target?) {
+    next(target?:string, all_target?:boolean) {
         //====> Sibling Define <====//
         let siblings = [];
         
@@ -373,6 +373,10 @@ export class PhenixElements extends Array<HTMLElement | Object | 'object'> {
         
         //====> Loop Through Media Elements <====//
         Phenix('img, video, audio, iframe').forEach((element:HTMLElement) => {
+            //====> if its phenix multimedia skip it <====//
+            const parent = element.parentNode as HTMLElement;
+            if (parent.matches('.px-media')) return;
+
             //====> Set Loading Mode <====//
             if (!Phenix(element).inView()) {
                 //====> Get Data <====//
